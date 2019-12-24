@@ -8,3 +8,15 @@ Soundfonts may be selected using the web interface.
 Reverb and chorus effects may be adjsuted using the web interface.
 Control of note on / off and patch selection is via MIDI input.
 All alas_seq MIDI inputs are automatically routed to the input of Fluidsynth including USB MIDI interfaces plugged after boot.
+
+The web interface may be accessed from http://<hostname>:8888. From here you can see the currently selected soundfont, select a different soundfont, delete (non-default(1)) soundfonts, upload new soundfonts, enable and adjust parameters of reverb and chorus effects.
+
+(1) A symlink is created from sf2/default to /usr/share/sounds/sf2 and this content is regarded as default soundfonts and may not be deleted.
+  
+* Dependencies
+Fluidbox depends on the following software modules:
+* Fluidsynth 2.1
+* pyfluidsynth with patches for fluidsynt 2.1 (https://github.com/riban-bw/pyfluidsynth)
+* Python 3
+* alsa_seq
+
