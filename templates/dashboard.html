@@ -1,0 +1,50 @@
+<html>
+  <body>
+    <h1>riban fluidbox</h1>
+    Current soundfont: {{ escape(config['current_font']) }}<br/>
+    <br/>
+    <form method="POST" action="soundfont">
+    <table>
+      {% for font in fonts %}
+        <tr>
+          <td>{{ escape(font) }}</td>
+          <td>{% if font[:8] != "default/" %}<button type="submit" name="delete" value="{{ escape(font) }}" onclick="return confirm('Are you sure you want to delete soundfont file {{ escape(font) }} from this fluidbox device?');">DELETE</button>{% end %}</td>
+          <td><button type="submit" name="select" value="{{ escape(font) }}">SELECT</button></td>
+        <tr>
+      {% end %}
+    </table>
+    </form>
+    <br/>
+    <form enctype="multipart/form-data" method="POST" action="upload">
+      Upload soundfonts from local computer <input type="file" multiple="" name="files" accept=".sf2" onchange="form.submit()" />
+    </form>
+    <form method="POST" action="effects">
+      <table>
+	<b><tr>
+          <th colspan="2" align="left">Reverb</th>
+          <th colspan="2" align="left">Chorus</th>
+        </tr></b>
+        <tr>
+          <td>Enable</td><td><input type="checkbox" name="enable_reverb" {% if config['reverb_enable'] %}checked{% end %}/></td>
+          <td>Enable</td><td><input type="checkbox" name="enable_chorus" {% if config['chorus_enable'] %}checked{% end %}/></td>
+        </tr>
+	<tr>
+          <td>Room size</td><td><input type="range" name="reverb_roomsize" min="0" max="100" value="{{ config['reverb_roomsize']*100 }}"/></td>
+          <td>Depth</td><td><input type="range" name="chorus_depth" min="0" max="100" value="{{ config['chorus_depth']*100 }}"/></td>
+        </tr>
+	<tr>
+          <td>Damping</td><td><input type="range" name="reverb_damping" min="0" max="100" value="{{ config['reverb_damping']*100 }}"/></td>
+          <td>Speed</td><td><input type="range" name="chorus_speed" min="0" max="100" value="{{ config['chorus_speed']*100 }}"/></td>
+        </tr>
+	<tr>
+          <td>Width</td><td><input type="range" name="reverb_width" min="0" max="100" value="{{ config['reverb_width']*100 }}"/></td>
+          <td>Number</td><td><input type="range" name="chorus_nr" min="0" max="100" value="{{ config['chorus_nr']*100 }}"/></td>
+        </tr>
+	<tr>
+          <td>Level</td><td><input type="range" name="reverb_level" min="0" max="100" value="{{ config['reverb_level']*100 }}"/></td>
+          <td>Level</td><td><input type="range" name="chorus_level" min="0" max="100" value="{{ config['chorus_level']*100 }}"/></td>
+        </tr>
+        <tr><td><input type="submit" value="Submit"/></td></tr>
+      </table>
+  </body>
+</html>
