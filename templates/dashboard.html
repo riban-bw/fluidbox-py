@@ -30,19 +30,23 @@
         </tr>
 	<tr>
           <td>Room size</td><td><input type="range" name="reverb_roomsize" min="0" max="100" value="{{ config['reverb_roomsize']*100 }}"/></td>
-          <td>Depth</td><td><input type="range" name="chorus_depth" min="0" max="100" value="{{ config['chorus_depth']*100 }}"/></td>
+          <td>Depth</td><td><input type="range" name="chorus_depth" min="0" max="210" value="{{ config['chorus_depth']*10 }}"/></td>
         </tr>
 	<tr>
           <td>Damping</td><td><input type="range" name="reverb_damping" min="0" max="100" value="{{ config['reverb_damping']*100 }}"/></td>
-          <td>Speed</td><td><input type="range" name="chorus_speed" min="0" max="100" value="{{ config['chorus_speed']*100 }}"/></td>
+          <td>Speed</td><td><input type="range" name="chorus_speed" min="0" max="50" value="{{ config['chorus_speed']*20 }}"/></td>
         </tr>
 	<tr>
           <td>Width</td><td><input type="range" name="reverb_width" min="0" max="100" value="{{ config['reverb_width']*100 }}"/></td>
-          <td>Number</td><td><input type="range" name="chorus_nr" min="0" max="100" value="{{ config['chorus_nr']*100 }}"/></td>
+          <td>Voice count</td><td><input type="range" name="chorus_nr" min="0" max="99" value="{{ config['chorus_nr'] }}"/></td>
         </tr>
 	<tr>
           <td>Level</td><td><input type="range" name="reverb_level" min="0" max="100" value="{{ config['reverb_level']*100 }}"/></td>
-          <td>Level</td><td><input type="range" name="chorus_level" min="0" max="100" value="{{ config['chorus_level']*100 }}"/></td>
+          <td>Level</td><td><input type="range" name="chorus_level" min="0" max="100" value="{{ config['chorus_level']*10 }}"/></td>
+        </tr>
+        <tr>
+          <td/><td/>
+          <td>Modulation</td><td><input type="radio" name="chorus_type" value="0">SINE</input><input type="radio" name="chorus_type" value="1">TRI</input></td>
         </tr>
         <tr><td><input type="submit" value="Submit"/></td></tr>
       </table>

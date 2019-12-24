@@ -1,6 +1,7 @@
 # Configuration
 synth = None
 fonts = []
+dirty = False
 
 config = {
 	'current_font': "None",
