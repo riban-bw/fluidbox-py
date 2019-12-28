@@ -2,10 +2,10 @@
 synth = None
 fonts = []
 dirty = False
+current_font_nr = 0
 
 config = {
 	'current_font': "default/TimGM6mb.sf2",
-	'current_font_nr': 0,
 	'reverb_enable': False,
 	'reverb_roomsize': 0,
         'reverb_damping': 0,
