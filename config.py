@@ -4,7 +4,7 @@ fonts = []
 dirty = False
 
 config = {
-	'current_font': "None",
+	'current_font': "default/TimGM6mb.sf2",
 	'current_font_nr': 0,
 	'reverb_enable': False,
 	'reverb_roomsize': 0,

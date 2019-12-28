@@ -16,7 +16,7 @@ def loadConfig():
 			config.config = json.load(f)
 			config.dirty = False
 	except:
-		print("Failed to load configuration from json file")
+		print("Failed to load configuration from json file - using defaults")
 
 def loadSoundfont(sSoundfont, save=True):
 	config.dirty = True
