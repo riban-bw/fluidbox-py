@@ -1,4 +1,5 @@
-# fluidbox
+# fluidbox-py
+*NOTE: This project is superceeded by c++ implementation*
 Raspberry Pi Fluidsynth Python with web interface
 
 Fluidsynth is a soundfont player. This project provides an instance of Fluidsynth running on a Raspberry Pi. It uses a Python wrapper to host the Fluidsynth library and presents configuration via a web interface on port 8888. Configuration is persisted by a json file and soundfonts must exist in the sf2 subdirectory.
@@ -16,7 +17,7 @@ The web interface may be accessed from http://<hostname>:8888. From here you can
 * Dependencies
 Fluidbox depends on the following software modules:
 * Fluidsynth 2.1
-* pyfluidsynth with patches for fluidsynt 2.1 (https://github.com/riban-bw/pyfluidsynth)
+* pyfluidsynth with patches for fluidsynth 2.1 (https://github.com/riban-bw/pyfluidsynth)
 * Python 3
 * alsa_seq
 
